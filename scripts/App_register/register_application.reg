@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Classes\Applications\$exeName]
+"FriendlyAppName"="$APPName"
+
+[HKEY_CURRENT_USER\Software\Classes\Applications\$exeName\shell\open\command]
+@="\"$cc_root\\$exeName\" \"%1\""

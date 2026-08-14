@@ -1,0 +1,5 @@
+[HKEY_CURRENT_USER\Software\Classes\.$Typename\OpenWithProgids]
+"$APPTYPE$"=-
+"$APPTYPE.$Typename"=-
+
+[-HKEY_CURRENT_USER\Software\Classes\$APPTYPE.$Typename]

@@ -1,0 +1,51 @@
+{
+    "version": "0.6.3",
+    "description": "A powerful, simple and easy-to-use web crawling framework based on Python3.",
+    "homepage": "https://www.easyspider.cn",
+    "license": "AGPL-3.0 license",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/NaiboWang/EasySpider/releases/download/v0.6.3/EasySpider_0.6.3_Windows_x64.7z",
+            "hash": "061dd13a3cc4eec8718bd0b1cb9fd38043a35fd6fb2fa04d62d920bd6be45fe5",
+            "extract_dir": "EasySpider_Windows_x64"
+        },
+        "32bit": {
+            "url": "https://github.com/NaiboWang/EasySpider/releases/download/v0.6.3/EasySpider_0.6.3_Windows_x32.7z",
+            "hash": "3d1672a04a1b02157cddb8808b2ce84fea5ad7f4fbc4acfa6f99053b99612f91",
+            "extract_dir": "EasySpider_Windows_x32"
+        }
+    },
+    "persist": ["Data", "execution_instances", "tasks", "config.json"],
+    "post_install": [
+        "$datapath = Join-Path $env:AppData 'EasySpider'",
+        ". \"$bucketsdir\\myScoop\\scripts\\Functions.ps1\"",
+        "Move-Data_dir -data_dir $datapath -persist_dir \"$persist_dir\\cache\""
+    ],
+    "pre_uninstall": [
+        "Remove-Item -Path (Join-Path $env:AppData 'EasySpider') -Recurse -Force -ErrorAction SilentlyContinue"
+    ],
+    "bin": "EasySpider.exe",
+    "shortcuts": [["EasySpider.exe", "EasySpider"]],
+    "checkver": {
+        "url": "https://github.com/NaiboWang/EasySpider/releases/",
+        "regex": "tag/v?([\\d.]+)\""
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/NaiboWang/EasySpider/releases/download/v$version/EasySpider_$version_Windows_x64.7z",
+                "hash": {
+                    "mode": "download"
+                },
+                "extract_dir": "EasySpider_Windows_x64"
+            },
+            "32bit": {
+                "url": "https://github.com/NaiboWang/EasySpider/releases/download/v$version/EasySpider_$version_Windows_x32.7z",
+                "hash": {
+                    "mode": "download"
+                },
+                "extract_dir": "EasySpider_Windows_x32"
+            }
+        }
+    }
+}

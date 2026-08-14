@@ -1,30 +1,44 @@
 {
-    "version": "v1.21",
-    "description": "一个可以免费使用的代码同步对比工具",
-    "homepage": "https://github.com/cxasm/cc-compare",
-    "license": "MIT",
-    "url": "https://github.com/cxasm/cc-compare/releases/download/v1.21/CCompare-v1.21-x64-Installer.exe#/dl.7z",
-    "hash": "e5bce6532bad5fe68c5071b6bf5bb40e051f5b644d584548c97ae2013c5c8498",
-    "installer": {
-        "script":[
-                "Remove-Item \"$dir\\`$PLUGINSDIR\" -Force -Recurse"
-        ]
+    "version": "1.24",
+    "description": "A code synchronization and comparison tool that can be used for free.",
+    "homepage": "https://gitee.com/cxasm/cc-compare",
+    "license": "LGPL-3.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://gitee.com/cxasm/cc-compare/releases/download/ccompare-v1.24/CCompare-v1.24-x64-Installer.exe#/dl.7z",
+            "hash": "sha256:631407db2956f8829c82f6c525313681211147b08defcbcaa2c9d075f43a62fe"
+        }
     },
-    "uninstaller":{
-        "script":"Remove-Item \"$env:APPDATA\\CCopmare\" -Recurse -Force -ErrorAction 'SilentlyContinue' "
-   }, 
-    "shortcuts": [
-        [
-            "CCompare.exe",
-            "CCopmare"
-        ]
+    "post_install": [
+        "$cc_root = \"$dir\".Replace('\\', '\\\\')",
+        "$APPName = 'CCompare'",
+        "$exeName = 'CCompare.exe'",
+        "'install-context.reg', 'uninstall-context.reg' | ForEach-Object {",
+        "    $content = Get-Content \"$bucketsdir\\myScoop\\scripts\\file_context_menu\\$_\"",
+        "    $content = $content.Replace('$cc_root', $cc_root)",
+        "    $content = $content.Replace('$APPName', $APPName)",
+        "    $content = $content.Replace('$exeName', $exeName)",
+        "    if ($global) {",
+        "       $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE')",
+        "    }",
+        "    Set-Content \"$dir\\$_\" $content -Encoding Ascii",
+        "}",
+        "reg import \"$dir\\install-context.reg\" 2>&1 | Out-Null"
     ],
-    "checkver": {    
-        "url": "https://github.com/cxasm/cc-compare/releases/tag/v1.21"
-    },
-    "autoupdate": {     
-        "url": "https://github.com/cxasm/cc-compare/releases/download/$version/CCompare-$version-x64-Installer.exe#/dl.7z"
+    "pre_uninstall": [
+        "reg import \"$dir\\uninstall-context.reg\" 2>&1 | Out-Null"
+    ],
+    "bin": "CCompare.exe",
+    "shortcuts": [["CCompare.exe", "CCompare"]],
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://gitee.com/cxasm/cc-compare/releases/download/ccompare-v$version/CCompare-v$version-x64-Installer.exe#/dl.7z",
+                "hash": {
+                    "url": "https://gitee.com/cxasm/cc-compare/releases",
+                    "regex": "CCompare-v$version-x64-Installer.exe.*?sha256:([a-f0-9]{64})"
+                }
+            }
+        }
     }
-       
-   
 }
