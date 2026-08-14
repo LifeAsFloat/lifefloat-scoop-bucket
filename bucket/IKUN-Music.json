@@ -19,7 +19,7 @@
     },
     "post_install": [
         "$datapath = Join-Path $env:AppData 'ikun-music-desktop'",
-        ". \"$bucketsdir\\myScoop\\scripts\\Functions.ps1\"",
+        ". \"$bucketsdir\\lifefloat-scoop-bucket\\scripts\\Functions.ps1\"",
         "Move-Data_dir -data_dir $datapath -persist_dir $persist_dir"
     ],
     "pre_uninstall": "Remove-Item (Join-Path $env:AppData 'ikun-music-desktop') -Recurse -Force -ErrorAction SilentlyContinue",

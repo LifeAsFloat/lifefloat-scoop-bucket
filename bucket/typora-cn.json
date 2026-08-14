@@ -8,12 +8,12 @@
     },
     "suggest": {
         "pandoc": "pandoc",
-        "See-Yue-Typora": "myScoop/See-Yue-Typora"
+        "See-Yue-Typora": "lifefloat-scoop-bucket/See-Yue-Typora"
     },
     "notes": [
         "Download from typoraio.cn mirror site.",
         "The configuration files and user data are stored in persistent directory.",
-        "run 'scoop install myScoop/See-Yue-Typora' to install See Yue theme for Typora.",
+        "run 'scoop install lifefloat-scoop-bucket/See-Yue-Typora' to install See Yue theme for Typora.",
         "If you want to remove the configuration files and user data when uninstalling, run 'scoop uninstall typora-cn -p'."
     ],
     "architecture": {
@@ -32,7 +32,7 @@
     },
     "innosetup": true,
     "post_install": [
-        ". \"$bucketsdir\\myScoop\\scripts\\Functions.ps1\"",
+        ". \"$bucketsdir\\lifefloat-scoop-bucket\\scripts\\Functions.ps1\"",
         "$configpath = Join-Path $env:AppData 'Typora'",
         "Move-Data_dir -data_dir $configpath -persist_dir $persist_dir"
     ],

@@ -34,7 +34,7 @@
         "New-ItemProperty -Path \"$reg_install_path\\sharedhost\" -Name \"Path\" -Value $dir -Force | Out-Null"
     ],
     "post_install": [
-        ". \"$bucketsdir\\myScoop\\scripts\\Functions.ps1\"",
+        ". \"$bucketsdir\\lifefloat-scoop-bucket\\scripts\\Functions.ps1\"",
         "$runtimepath = \"$env:ProgramFiles\\dotnet\\shared\"",
         "Move-Data_dir \"$runtimepath\" \"$persist_dir\\shared\"",
         "$sdkpath = \"$env:ProgramFiles\\dotnet\\sdk\"",
@@ -55,7 +55,7 @@
         "Remove-ItemProperty -Path \"HKLM:\\SOFTWARE\\dotnet\\Setup\\InstalledVersions\\x64\" -Name \"InstallLocation\" -Force | Out-Null",
         "if ($purge) {",
         "   Remove-Item -Path \"$env:ProgramFiles\\dotnet\\shared\" -Recurse -Force | Out-Null",
-        "   . \"$bucketsdir\\myScoop\\scripts\\Functions.ps1\"",
+        "   . \"$bucketsdir\\lifefloat-scoop-bucket\\scripts\\Functions.ps1\"",
         "   Move-Data_dir \"$persist_dir\\shared\" \"$env:ProgramFiles\\dotnet\\shared\"",
         "   Set-ItemProperty -Path \"HKLM:\\SOFTWARE\\dotnet\\Setup\\InstalledVersions\\x64\\sharedhost\" -Name \"Path\" -Value $env:ProgramFiles\\dotnet\\shared -Force | Out-Null",
         "}"

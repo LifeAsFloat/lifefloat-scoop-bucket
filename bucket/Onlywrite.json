@@ -12,7 +12,7 @@
     },
     "post_install": [
         "$configpath = \"$env:APPDATA\\com.only.writer\"",
-        ". \"$bucketsdir\\myScoop\\scripts\\Functions.ps1\"",
+        ". \"$bucketsdir\\lifefloat-scoop-bucket\\scripts\\Functions.ps1\"",
         "Move-Data_dir -data_dir $configpath -persist_dir $persist_dir"
     ],
     "pre_uninstall": "Remove-Item -Path \"$env:APPDATA\\com.only.writer\" -Recurse -Force -ErrorAction SilentlyContinue",

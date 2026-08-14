@@ -1,10 +1,10 @@
 {
-    "version": "7.29.5.2",
+    "version": "8.7.0.101",
     "homepage": "https://pan.baidu.com/download",
     "license": "Freeware",
     "description": "百度网盘 PC 版",
-    "url": "http://issuecdn.baidupcs.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.29.5.2.exe#dl.7z",
-    "hash": "54dc43242be1b7fc818b4c14a36932bfdbc88e07a6720786ac73d5ae2e6f8cc6",
+    "url": "http://issuecdn.baidupcs.com/issue/netdisk/yunguanjia/BaiduNetdisk_8.7.0.101.exe#dl.7z",
+    "hash": "312ea90a0623e1e414652b04b9275a06bf47e071a83cacfaf31fbbb734c9b748",
     "bin": "BaiduNetdisk.exe",
     "shortcuts": [
         [

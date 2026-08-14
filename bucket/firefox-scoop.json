@@ -19,7 +19,7 @@
     },
     "extract_dir": "core",
     "post_install": [
-        ". \"$bucketsdir\\myScoop\\scripts\\Functions.ps1\"",
+        ". \"$bucketsdir\\lifefloat-scoop-bucket\\scripts\\Functions.ps1\"",
         "$profilePath = Join-Path $env:AppData 'Mozilla\\Firefox'",
         "Move-Data_dir -data_dir $profilePath -persist_dir $persist_dir"
     ],

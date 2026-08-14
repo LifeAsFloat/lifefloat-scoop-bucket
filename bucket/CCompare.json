@@ -14,7 +14,7 @@
         "$APPName = 'CCompare'",
         "$exeName = 'CCompare.exe'",
         "'install-context.reg', 'uninstall-context.reg' | ForEach-Object {",
-        "    $content = Get-Content \"$bucketsdir\\myScoop\\scripts\\file_context_menu\\$_\"",
+        "    $content = Get-Content \"$bucketsdir\\lifefloat-scoop-bucket\\scripts\\file_context_menu\\$_\"",
         "    $content = $content.Replace('$cc_root', $cc_root)",
         "    $content = $content.Replace('$APPName', $APPName)",
         "    $content = $content.Replace('$exeName', $exeName)",

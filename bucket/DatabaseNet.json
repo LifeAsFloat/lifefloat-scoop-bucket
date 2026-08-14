@@ -1,5 +1,5 @@
 {
-    "version": "35.9.8816",
+    "version": "36.5.9491.1",
     "description": "Innovative, powerful and intuitive multiple database management tool",
     "homepage": "https://fishcodelib.com/Database.htm",
     "license": {
@@ -7,7 +7,7 @@
         "url": "https://fishcodelib.com/EULA.htm"
     },
     "url": "https://fishcodelib.com/files/DatabaseNet5Pro.zip",
-    "hash": "4422ae96445768c2c3c628ebc514008547612711c2d557c57979192eb7784c93",
+    "hash": "8124c769c585ad9664f8e7949f6b65ac0103590173ff3a650b67b38f0f7143c3",
     "bin": [
         "Database5Pro.exe",
         [

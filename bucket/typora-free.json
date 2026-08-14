@@ -11,7 +11,7 @@
     },
     "innosetup": true,
     "post_install": [
-        ". \"$bucketsdir\\myScoop\\scripts\\Functions.ps1\"",
+        ". \"$bucketsdir\\lifefloat-scoop-bucket\\scripts\\Functions.ps1\"",
         "$configpath = Join-Path $env:AppData 'Typora'",
         "Move-Data_dir -data_dir $configpath -persist_dir $persist_dir"
     ],

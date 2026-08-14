@@ -10,7 +10,7 @@
     "shortcuts": [["NoFences.exe", "NoFences", "", "NoFences.exe"]],
     "post_install": [
         "$cc_root = \"$dir\".Replace('\\', '\\\\')",
-        ". \"$bucketsdir\\myScoop\\scripts\\Functions.ps1\"",
+        ". \"$bucketsdir\\lifefloat-scoop-bucket\\scripts\\Functions.ps1\"",
         "Add-Startup_menu -cc_root $cc_root -exeName 'NoFences.exe' -shortcutName 'NoFences'",
         "Move-Data_dir -data_dir \"$env:LOCALAPPDATA\\NoFences\" -persist_dir $persist_dir"
     ],

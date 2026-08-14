@@ -18,7 +18,7 @@
     "persist": ["Data", "execution_instances", "tasks", "config.json"],
     "post_install": [
         "$datapath = Join-Path $env:AppData 'EasySpider'",
-        ". \"$bucketsdir\\myScoop\\scripts\\Functions.ps1\"",
+        ". \"$bucketsdir\\lifefloat-scoop-bucket\\scripts\\Functions.ps1\"",
         "Move-Data_dir -data_dir $datapath -persist_dir \"$persist_dir\\cache\""
     ],
     "pre_uninstall": [
