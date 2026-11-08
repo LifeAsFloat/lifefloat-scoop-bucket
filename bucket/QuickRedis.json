@@ -20,9 +20,7 @@
             "QuickRedis"
         ]
     ],
-    "checkver": {    
-        "url": "https://github.com/quick123official/quick_redis_blog"
-    },
+    "checkver": "github",
     "autoupdate": {     
         "url": "https://github.com/quick123official/quick_redis_blog/releases/download/v$version/QuickRedis-$version-win-ia32.exe#/dl.7z"
     }

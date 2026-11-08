@@ -15,12 +15,16 @@
     ],
     "bin": "GDIView.exe",
     "checkver": {
-        "url": "https://www.nirsoft.net/utils/gdi_handles.html"
+        "url": "https://www.nirsoft.net/utils/gdi_handles.html",
+        "regex": "(?i)Versions? History[\\s\\S]{0,200}?([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.nirsoft.net/utils/gdiview-x64.zip"
+                "url": "https://www.nirsoft.net/utils/gdiview-x64.zip",
+                "hash": {
+                    "mode": "download"
+                }
             }
         }
     }

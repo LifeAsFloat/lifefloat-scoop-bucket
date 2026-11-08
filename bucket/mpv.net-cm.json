@@ -3,6 +3,9 @@
     "description": "mpv.net_CM 是基于 mpv.net 上游的中文分支模组",
     "homepage": "https://bbs.acgrip.com/thread-7798-1-1.html",
     "license": "GPL-2.0-only",
+    "notes": [
+        "上游项目 hooke007/mpv.net_CM 已归档停止维护（2023-01 发布终版 6032re 后停更），本清单锁定现有构建，不再提供更新。"
+    ],
     "architecture": {
         "64bit": {
             "url": "https://github.com/hooke007/mpv.net_CM/releases/download/6032/mpvnet-CM-20221014.exe/#dl.7z",
@@ -16,17 +19,5 @@
             "mpvnet.exe",
             "mpvnet"
         ]
-    ],
-    "checkver": {
-        "github": "https://github.com/hooke007/mpv.net_CM",
-        "regex": "/releases/download/(?<tag>\\w+)/mpvnet-CM-(?<build>\\d{8})",
-        "replace": "${tag}-${build}"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://github.com/hooke007/mpv.net_CM/releases/download/$matchTag/mpvnet-CM-$matchBuild.exe/#dl.7z"
-            }
-        }
-    }
+    ]
 }

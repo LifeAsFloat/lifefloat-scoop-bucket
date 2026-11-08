@@ -3,7 +3,7 @@
     "description": "TeX Live is a cross-platform, free software distribution for the TeX typesetting system",
     "license": "LPPL,GPL2",
     "version": "2026",
-    "url": "http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip",
+    "url": "https://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/install-tl.zip",
     "installer": {
         "script": [
             "Write-Host 'Invoking TeX Live installer...' -ForegroundColor DarkCyan",
@@ -43,13 +43,10 @@
     ],
     "persist": "texmf-config",
     "checkver": {
-        "url": "https://tug.org/texlive/pretest.html",
-        "regex": "Pretesting TeX Live (\\d+)"
+        "url": "https://tug.org/texlive/",
+        "regex": "TeX Live (\\d{4}) is available"
     },
     "autoupdate": {
-        "url": "http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip",
-        "hash": {
-            "url": "$url.sha512"
-        }
+        "url": "https://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/install-tl.zip"
     }
 }

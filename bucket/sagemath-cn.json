@@ -3,6 +3,10 @@
     "description": "Mathematics software system",
     "homepage": "https://www.sagemath.org",
     "license": "GPL-2.0-or-later",
+    "notes": [
+        "SageMath Windows binaries have been discontinued upstream (last installer: 9.3, 2021-08).",
+        "The official recommendation is to use WSL (Windows Subsystem for Linux) instead."
+    ],
     "architecture": {
         "64bit": {
             "url": "https://mirror.nju.edu.cn/sagemath/win/SageMath-9.3-Installer-v0.6.3.exe",
@@ -64,16 +68,5 @@
             "-t \"SageMath Notebook\" /bin/bash --login -c \"/opt/sagemath-*/sage --notebook\"",
             "sagemath.ico"
         ]
-    ],
-    "checkver": {
-        "github": "https://github.com/sagemath/sage-windows",
-        "regex": "tag/([\\d-.]+)"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://mirror.nju.edu.cn/sagemath/win/SageMath-$preReleaseVersion-Installer-v$matchHead.exe"
-            }
-        }
-    }
+    ]
 }

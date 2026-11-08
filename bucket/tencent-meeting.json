@@ -28,11 +28,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://meeting.tencent.com/wemeet-webapi/v2/config/query-download-info",
-        "script": "(Invoke-WebRequest -Body '[{\"instance\":\"windows\",\"type\":\"0300000000\"}]' -Method 'POST' -Uri $url).Content",
-        "regex": "https://(?<url>.*?\\.exe).*?version\".*?\"([\\d.]+)\""
-    },
-    "autoupdate": {
-        "url": "https://$matchUrl#/dl.7z"
+        "url": "https://pc.qq.com/detail/18/detail_26218.html",
+        "regex": "最新([\\d.]+)官方正式版"
     }
 }

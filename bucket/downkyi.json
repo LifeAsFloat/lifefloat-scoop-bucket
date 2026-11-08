@@ -3,6 +3,9 @@
     "description": "DownKyi is a bilibili video download tool.",
     "homepage": "https://github.com/yaobiao131/downkyicore/blob/main/README.md",
     "license": "GPL",
+    "notes": [
+        "上游仓库 yaobiao131/downkyicore 已因收到律师函于 2026-07 宣布永久关停，并删除全部 Releases/Tags，本清单下载链接已失效（404）；是否删除或迁移本清单由用户决定。"
+    ],
     "architecture": {
         "64bit": {
             "url": "https://github.com/yaobiao131/downkyicore/releases/download/v1.0.18/DownKyi-1.0.18-1.win-x64.zip",
