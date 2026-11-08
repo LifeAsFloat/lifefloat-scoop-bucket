@@ -1,5 +1,5 @@
 {
-    "version": "0.2.33",
+    "version": "3.29.9",
     "description": "Cursor 是一个集成了 GPT-4 的代码编辑器，可以让你快速地编写、修改和讨论代码 1。Cursor 还提供了 API SDK，可以用于调用 Cursor 的接口",
     "license": {
         "identifier": "Proprietary",
@@ -10,8 +10,8 @@
         "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
         "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse"
     ],
-    "url": "https://dl.todesktop.com/230313mzl4w4u92/windows/nsis/x64#/dl.7z",
-    "hash": "2208108d78b80b31dec8540c201f730fc6f119bd53725b400c1919a6a3b1b110",
+    "url": "https://downloads.cursor.com/production/306d153d51d714882ab7b1bc49649cab624e8a31/win32/x64/system-setup/CursorSetup-x64-3.29.9.exe#/dl.7z",
+    "hash": "df893366f26ad3bddaf609af7062eb36bec025d339effb6b101a421acbcbf856",
     "shortcuts": [
         [
             "Cursor.exe",
@@ -20,18 +20,11 @@
     ],
     "persist": "resources/lsp",
     "checkver": {
-        "script": [
-            "$response = Invoke-WebRequest -Uri 'https://www.cursor.so/'",
-            "$downloadUrl = $response.Links | Where-Object href -match 'windows/nsis/x64' | Select-Object -first 1 -expand href",
-            "$res = Invoke-WebRequest -Uri $downloadUrl -MaximumRedirection 0 -UseBasicParsing",
-            "$filePath = Join-Path $cachedir $res.Headers['Content-Disposition'].Split('=')[1].TrimStart(\"`\"\").TrimEnd(\"`\"\")",
-            "$version = [regex]::Match($filePath, '([\\d.]+)').Groups[1].Value",
-            "Write-Output $version $downloadUrl"
-        ],
-        "regex": "^([\\d.]+)\\s+https://dl.todesktop.com/(?<dlquerypath>.+)$"
+        "url": "https://www.cursor.com/api/download?platform=win32-x64&releaseTrack=stable",
+        "regex": "\"downloadUrl\":\"https://downloads\\.cursor\\.com/production/(?<commit>[a-f0-9]+)/win32/x64/system-setup/CursorSetup-x64-(?<version>[\\d.]+)\\.exe\""
     },
     "autoupdate": {
-        "url": "https://dl.todesktop.com/$matchDlquerypath#/dl.7z",
+        "url": "https://downloads.cursor.com/production/$matchCommit/win32/x64/system-setup/CursorSetup-x64-$version.exe#/dl.7z",
         "hash": {
             "mode": "download"
         }

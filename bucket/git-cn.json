@@ -1,17 +1,13 @@
 {
-    "version": "2.41.0.windows.1",
+    "version": "2.56.0.windows.4",
     "description": "Distributed version control system",
     "homepage": "https://gitforwindows.org",
     "license": "GPL-2.0-only",
     "notes": "Set Git Credential Manager Core by running: \"git config --global credential.helper manager-core\"",
     "architecture": {
         "64bit": {
-            "url": "https://mirrors.bfsu.edu.cn/github-release/git-for-windows/git/LatestRelease/PortableGit-2.41.0-64-bit.7z.exe#/dl.7z",
-            "hash": "fcbaeffd24fdf435a1f7844825253509136377915e6720aa66aa256ec1f83c30"
-        },
-        "32bit": {
-            "url": "https://mirrors.bfsu.edu.cn/github-release/git-for-windows/git/LatestRelease/PortableGit-2.41.0-32-bit.7z.exe#/dl.7z",
-            "hash": "12190f5bec59a187ec0368f39dba55a7802706076b91fe400ef5da4247999467"
+            "url": "https://mirrors.bfsu.edu.cn/github-release/git-for-windows/git/LatestRelease/PortableGit-2.56.0.4-64-bit.7z.exe#/dl.7z",
+            "hash": "b1f3e52216e2ed6882d1bebfd4d3fdf319bec40d2edbbf9fd26ec4fd3fce7ed1"
         }
     },
     "bin": [
@@ -39,21 +35,18 @@
         "GIT_INSTALL_ROOT": "$dir"
     },
     "checkver": {
-        "github": "https://github.com/git-for-windows/git",
-        "regex": "v([\\w.]+)/PortableGit-(?<full>[\\w.]+)-64-bit"
+        "url": "https://api.github.com/repos/git-for-windows/git/releases/latest",
+        "regex": "v(?<version>[\\w.]+)/PortableGit-(?<full>[\\w.]+)-64-bit\\.7z\\.exe"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
                 "url": "https://mirrors.bfsu.edu.cn/github-release/git-for-windows/git/LatestRelease/PortableGit-$matchFull-64-bit.7z.exe#/dl.7z"
-            },
-            "32bit": {
-                "url": "https://mirrors.bfsu.edu.cn/github-release/git-for-windows/git/LatestRelease/PortableGit-$matchFull-32-bit.7z.exe#/dl.7z"
             }
         },
         "hash": {
-            "url": "https://github.com/git-for-windows/git/releases/tag/v$version",
-            "regex": "<td>$basename</td>\\s*<td>$sha256</td>"
+            "url": "https://api.github.com/repos/git-for-windows/git/releases/latest",
+            "regex": "\"name\":\"PortableGit-$matchFull-64-bit\\.7z\\.exe\"[\\s\\S]*?\"digest\":\"sha256:$sha256\""
         }
     }
 }

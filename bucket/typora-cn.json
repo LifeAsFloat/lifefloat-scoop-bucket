@@ -1,5 +1,5 @@
 {
-    "version": "1.14.9",
+    "version": "1.14.10",
     "description": "A markdown editor downloaded by mirror",
     "homepage": "https://typoraio.cn",
     "license": {
@@ -18,16 +18,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://downloads.typoraio.cn/windows/typora-setup-x64-1.14.9.exe",
-            "hash": "232233247bbd739fad7707075cb0dd2a47448dba1e2dec15fca3b0d501952f7d"
+            "url": "https://downloads.typoraio.cn/windows/typora-setup-x64.exe",
+            "hash": "038e2af96968cbd55b7c418c9ad40b2cf45ffc8cc04dbc1cc98488f40e0a5c62"
         },
         "32bit": {
-            "url": "https://downloads.typoraio.cn/windows/typora-setup-ia32-1.14.9.exe",
-            "hash": "5ffcf5ca6efb25481b443d3833921e77626cc90743c529afa64315050bb35a34"
-        },
-        "arm64": {
-            "url": "https://downloads.typoraio.cn/windows/typora-setup-arm64-1.14.9.exe",
-            "hash": "ef72ba3c23430259587600d5eb711a0df7e4db788a22be7b7c7e97a9f4afd2f7"
+            "url": "https://downloads.typoraio.cn/windows/typora-setup-ia32.exe",
+            "hash": "41c0eaf5baa32f76ceec2f0bd2f01237025cbe17fd9ebbb541172cb906b3326c"
         }
     },
     "innosetup": true,
@@ -60,13 +56,16 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://downloads.typoraio.cn/windows/typora-setup-x64-$version.exe"
+                "url": "https://downloads.typoraio.cn/windows/typora-setup-x64.exe",
+                "hash": {
+                    "mode": "download"
+                }
             },
             "32bit": {
-                "url": "https://downloads.typoraio.cn/windows/typora-setup-ia32-$version.exe"
-            },
-            "arm64": {
-                "url": "https://downloads.typoraio.cn/windows/typora-setup-arm64-$version.exe"
+                "url": "https://downloads.typoraio.cn/windows/typora-setup-ia32.exe",
+                "hash": {
+                    "mode": "download"
+                }
             }
         }
     }

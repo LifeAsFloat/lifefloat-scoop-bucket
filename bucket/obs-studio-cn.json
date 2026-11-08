@@ -1,25 +1,15 @@
 {
-    "version": "29.0.2",
+    "version": "33.0.1",
     "description": "Video Recording And Live Streaming Software",
     "homepage": "https://obsproject.com",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://mirrors.bfsu.edu.cn/github-release/obsproject/obs-studio/OBS%20Studio%2029.0.2/OBS-Studio-29.0.2-Full-x64.zip",
-            "hash": "1420b73b18afa766c6331725e12fb4cc8ce1a65843dff72c68e0030f9a82b6c1",
+            "url": "https://mirrors.bfsu.edu.cn/github-release/obsproject/obs-studio/OBS%20Studio%2033.0.1/OBS-Studio-33.0.1-Windows-x64.zip",
+            "hash": "0d9436451c2d772b33428e3fdae9776f071895c335de17283176306fb72651d3",
             "shortcuts": [
                 [
                     "bin\\64bit\\obs64.exe",
-                    "OBS Studio"
-                ]
-            ]
-        },
-        "32bit": {
-            "url": "https://mirrors.bfsu.edu.cn/github-release/obsproject/obs-studio/OBS%20Studio%2027.2.4/OBS-Studio-27.2.4-Full-x86.zip",
-            "hash": "51bacea13391874f2902575d2d8ab6e6eb6bd7c90682c7461e7cde15dec99c22",
-            "shortcuts": [
-                [
-                    "bin\\32bit\\obs32.exe",
                     "OBS Studio"
                 ]
             ]
@@ -38,15 +28,16 @@
     ],
     "checkver": {
         "url": "https://obsproject.com/download",
-        "regex": "OBS-Studio-([\\d.]+)-Full-x64\\.zip"
+        "regex": "OBS-Studio-([\\d.]+)-Windows-x64\\.zip"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://mirrors.bfsu.edu.cn/github-release/obsproject/obs-studio/OBS%20Studio%20$version/OBS-Studio-$version-Full-x64.zip"
-            },
-            "32bit": {
-                "url": "https://mirrors.bfsu.edu.cn/github-release/obsproject/obs-studio/OBS%20Studio%20$version/OBS-Studio-$version-Full-x86.zip"
+                "url": "https://mirrors.bfsu.edu.cn/github-release/obsproject/obs-studio/OBS%20Studio%20$version/OBS-Studio-$version-Windows-x64.zip",
+                "hash": {
+                    "url": "https://api.github.com/repos/obsproject/obs-studio/releases/tags/$version",
+                    "regex": "$basename: $sha256"
+                }
             }
         }
     }

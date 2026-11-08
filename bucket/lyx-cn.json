@@ -1,11 +1,11 @@
 {
     "homepage": "https://www.lyx.org/",
-    "version": "2.3.5.4",
+    "version": "2.5.3.1",
     "license": "GPL-2.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/lyx/bin/2.3.5/LyX-2352-Installer-4.exe#/dl.7z",
-            "hash": "4288518d2a214b86fb3e068411c04be61557f0fabaa9fc0aa9cd88d88bbdbc79"
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/lyx/bin/2.5.3/LyX-253-Installer-1-x64.exe#/dl.7z",
+            "hash": "5d5092a02a0e134eb3576f3d164411cfb872962e007afac945ad6e66978cd5d0"
         }
     },
     "bin": "bin\\LyX.exe",
@@ -23,7 +23,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://mirrors.tuna.tsinghua.edu.cn/lyx/bin/$version/LyX-$cleanVersion-Installer-$majorVersion.exe#/dl.7z"
+                "url": "https://mirrors.tuna.tsinghua.edu.cn/lyx/bin/$majorVersion.$minorVersion.$patchVersion/LyX-$majorVersion$minorVersion$patchVersion-Installer-$buildVersion-x64.exe#/dl.7z"
             }
         }
     }

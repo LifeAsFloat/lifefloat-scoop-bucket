@@ -1,13 +1,24 @@
 {
-    "version": "0.4.9",
+    "version": "0.4.13",
     "description": "Azur Lane Auto Script - A tool to automate tasks in the game Azur Lane",
     "homepage": "https://github.com/LmeSzinc/AzurLaneAutoScript",
     "license": "GPL-3.0 License",
     "notes": "This Application will update by itself when a new version is released, no need to use 'scoop update'.",
-    "url": "https://github.com/LmeSzinc/AzurLaneAutoScript/releases/latest/download/AlasApp_0.4.9_fullcn.7z",
-    "hash": "sha256:89c98c4388daaa71578c5bf03c5eaeda68202ad92704b7b020a5cea0995cef4e",
+    "url": "https://github.com/LmeSzinc/AzurLaneAutoScript/releases/download/v2026.10.09/AlasApp_0.4.13_fullcn.7z",
+    "hash": "sha256:570c6eec217799213d81c82dc42c8bbba3897f703cb926d122937a9de5c7aec0",
     "extract_dir": "AzurLaneAutoScript",
     "bin": "Alas.exe",
     "shortcuts": [["Alas.exe", "Alas"]],
-    "persist": ["config"]
+    "persist": ["config"],
+    "checkver": {
+        "url": "https://api.github.com/repos/LmeSzinc/AzurLaneAutoScript/releases/latest",
+        "regex": "releases/download/(?<tag>v[\\d.]+)/AlasApp_(?<version>[\\d.]+)_fullcn\\.7z"
+    },
+    "autoupdate": {
+        "url": "https://github.com/LmeSzinc/AzurLaneAutoScript/releases/download/$matchTag/AlasApp_$version_fullcn.7z",
+        "hash": {
+            "url": "https://api.github.com/repos/LmeSzinc/AzurLaneAutoScript/releases/tags/$matchTag",
+            "regex": "\"name\":\\s*\"AlasApp_$version_fullcn\\.7z\"[\\s\\S]*?\"digest\":\\s*\"sha256:([a-f0-9]{64})\""
+        }
+    }
 }

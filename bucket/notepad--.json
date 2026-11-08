@@ -1,12 +1,12 @@
 {
-    "version": "3.6",
+    "version": "3.9.2",
     "description": "A lightweight and efficient notepad++ alternative.",
     "homepage": "https://github.com/cxasm/notepad--",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/cxasm/notepad--/releases/download/notepad-v3.6/Notepad--v3.6-win10-portable.zip",
-            "hash": "7a28fcb21aa5e7d577cdb788b100e50e02762926022e80bcfcb488e4542bc3d1"
+            "url": "https://github.com/cxasm/notepad--/releases/download/notepad-v3.9.2/Notepad--v3.9.2-win10-portable.zip",
+            "hash": "68e95ba7b5f97e98e60ef571ecd8a1e99f7a88052e99cabc4bf25eb7b1eae910"
         }
     },
     "post_install": [
@@ -41,5 +41,16 @@
         "reg import \"$dir\\unregister_application.reg\" 2>&1 | Out-Null"
     ],
     "bin": "Notepad--.exe",
-    "shortcuts": [["Notepad--.exe", "Notepad--"]]
+    "shortcuts": [["Notepad--.exe", "Notepad--"]],
+    "checkver": {
+        "url": "https://api.github.com/repos/cxasm/notepad--/releases/latest",
+        "regex": "notepad-v([\\d.]+)/Notepad--v[\\d.]+-win10-portable\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/cxasm/notepad--/releases/download/notepad-v$version/Notepad--v$version-win10-portable.zip"
+            }
+        }
+    }
 }

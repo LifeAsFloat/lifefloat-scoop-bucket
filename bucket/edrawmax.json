@@ -2,8 +2,9 @@
     "description": "集两百多种绘图于一身的综合图形图表设计软件",
     "homepage": "https://www.edrawsoft.cn/download-edrawmax.html",
     "license": "Unknown",
-    "version": "12.0.8",
-    "url": "https://cc-download.edrawsoft.cn/origin/edraw-max_cn_full5374.exe",
+    "version": "15.0.8",
+    "url": "https://cc-download.wondershare.cc/cbs_down/edraw-max_cn_64bit_15.0.8_full5374.exe",
+    "hash": "28055ed9723a35debe0a36aea9c1a8fa881e0b00c6b04fc04823c03ff488da93",
     "innosetup": true,
     "bin": "EdrawMax.exe",
     "shortcuts": [
@@ -13,9 +14,13 @@
         ]
     ],
     "checkver": {
-        "regex": ">([\\d.]+) \\(更新日期："
+        "url": "https://www.edrawsoft.cn/download-edrawmax.html",
+        "regex": "edraw-max_cn_64bit_([\\d.]+)_(?<build>full\\d+)\\.exe"
     },
     "autoupdate": {
-        "url": "https://cc-download.edrawsoft.cn/origin/edraw-max_cn_full5374.exe"
+        "url": "https://cc-download.wondershare.cc/cbs_down/edraw-max_cn_64bit_$version_$matchBuild.exe",
+        "hash": {
+            "mode": "download"
+        }
     }
 }

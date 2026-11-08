@@ -1,17 +1,17 @@
 {
-    "version": "1.0",
+    "version": "3.33.318.9502",
     "description": "A simple and elegant calender desk.",
     "homepage": "https://www.xdiarys.com/",
     "license": "freeware",
     "url": "https://download.xdiarys.com/windows/xdiarys-green.7z",
-    "hash": "sha256:041e7b3c7607f06617ddbd23e442d3423789c10a174367662010bd95654b3e75",
+    "hash": "sha256:cbe4a932df5ef3f4afeb962d2e431efd9985aa1b4c81ca75864f98e1ad399a02",
     "extract_dir": "xdiarys-green",
     "bin": "desktopcal.exe",
     "shortcuts": [["desktopcal.exe", "xDiarys"]],
     "persist": ["Db", "config.ini"],
     "checkver": {
-        "url": "https://www.xdiarys.com/",
-        "re": "版本[:：]\\s([\\d.+]+)"
+        "url": "https://www.xdiarys.com/updates.js",
+        "regex": "version:\"([\\d.]+)\",release_date:\"[\\d-]+\",svn_rev:\\d+,os:\"windows\",is_latest:!0"
     },
     "autoupdate": {
         "url": "https://download.xdiarys.com/windows/xdiarys-green.7z",

@@ -1,31 +1,39 @@
 {
     "homepage": "https://mirrors.bfsu.edu.cn/julia-releases/",
     "description": "A programming language that is a fresh approach to technical computing.",
-    "version": "1.9.1",
+    "version": "1.13.3",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://mirrors.bfsu.edu.cn/julia-releases/bin/winnt/x64/1.9/julia-1.9.1-win64.exe",
-            "hash": "e2f105d0ebdcd9a375bfb386bbdacc462effceba0b252f95f27b5660211c8df1"
+            "url": "https://mirrors.bfsu.edu.cn/julia-releases/bin/winnt/x64/1.13/julia-1.13.3-win64.exe",
+            "hash": "3928c7d1a908eb4797f9ca064cf62757fc49198360ee8251f4a6df9f35c6f9ad"
         },
         "32bit": {
-            "url": "https://mirrors.bfsu.edu.cn/julia-releases/bin/winnt/x86/1.9/julia-1.9.1-win32.exe",
-            "hash": "93db56de16d3eb1f68cf126cd52db722d0afd0b711c9e9b25ab2d49299d7a7ac"
+            "url": "https://mirrors.bfsu.edu.cn/julia-releases/bin/winnt/x86/1.13/julia-1.13.3-win32.exe",
+            "hash": "233d50af69f8478a02f031d8435fb05bcb8024d0a3fdbf786a78ba1a480076de"
         }
     },
     "innosetup": true,
     "bin": "bin\\julia.exe",
     "checkver": {
         "url": "https://julialang.org/downloads/",
-        "regex": "Current stable release: v([\\d.]+)"
+        "regex": "stable release is Julia ([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://mirrors.bfsu.edu.cn/julia-releases/bin/winnt/x64/$majorVersion.$minorVersion/julia-$version-win64.exe"
+                "url": "https://mirrors.bfsu.edu.cn/julia-releases/bin/winnt/x64/$majorVersion.$minorVersion/julia-$version-win64.exe",
+                "hash": {
+                    "url": "https://julialang-s3.julialang.org/bin/checksums/julia-$version.sha256",
+                    "regex": "$sha256\\s+$basename"
+                }
             },
             "32bit": {
-                "url": "https://mirrors.bfsu.edu.cn/julia-releases/bin/winnt/x86/$majorVersion.$minorVersion/julia-$version-win32.exe"
+                "url": "https://mirrors.bfsu.edu.cn/julia-releases/bin/winnt/x86/$majorVersion.$minorVersion/julia-$version-win32.exe",
+                "hash": {
+                    "url": "https://julialang-s3.julialang.org/bin/checksums/julia-$version.sha256",
+                    "regex": "$sha256\\s+$basename"
+                }
             }
         }
     }

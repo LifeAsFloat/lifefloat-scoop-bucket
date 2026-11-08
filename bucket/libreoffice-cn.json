@@ -1,5 +1,5 @@
 {
-    "version": "7.5.0",
+    "version": "26.8.2",
     "description": "Powerful and free office suite, a successor to OpenOffice(.org).",
     "homepage": "https://libreoffice.org/",
     "license": "MPL-2.0",
@@ -9,16 +9,16 @@
     "notes": "If you are upgrading from portable version, you can migrate settings by copying \"$persist_dir\\Data\" to \"%AppData%\\LibreOffice\"",
     "architecture": {
         "64bit": {
-            "url": "https://mirrors.bfsu.edu.cn/libreoffice/libreoffice/stable/7.5.0/win/x86_64/LibreOffice_7.5.0_Win_x86-64.msi#/dl.msi_",
-            "hash": "55f03c6be88287a787f58c7cc772bf4386839f95edf28828aabf5f12052c718c"
+            "url": "https://mirrors.bfsu.edu.cn/libreoffice/libreoffice/stable/26.8.2/win/x86_64/LibreOffice_26.8.2_Win_x86-64.msi#/dl.msi_",
+            "hash": "ff4b911403b67ee9e6249f820f9782c44bb32c94fdaa45b0da53a8e419e5307a"
         },
         "32bit": {
-            "url": "https://mirrors.bfsu.edu.cn/libreoffice/libreoffice/stable/7.5.0/win/x86/LibreOffice_7.5.0_Win_x86.msi#/dl.msi_",
-            "hash": "a4df606eb053c027d76a98f6935af6a5843a0814d8352f5b5e89f9f308308a09"
+            "url": "https://mirrors.bfsu.edu.cn/libreoffice/libreoffice/stable/26.8.2/win/x86/LibreOffice_26.8.2_Win_x86.msi#/dl.msi_",
+            "hash": "f9f3b4ca065bc819618d0bc3eea5b77655d6cd127c12ef08dbbb33ecdca2295b"
         },
         "arm64": {
-            "url": "https://mirrors.bfsu.edu.cn/libreoffice/libreoffice/stable/7.5.0/win/aarch64/LibreOffice_7.5.0_Win_aarch64.msi#/dl.msi_",
-            "hash": "d72a5de4d6548a7f862e35b8cc5f07dde6632ce3a536387a469c4b90317b666e"
+            "url": "https://mirrors.bfsu.edu.cn/libreoffice/libreoffice/stable/26.8.2/win/aarch64/LibreOffice_26.8.2_Win_aarch64.msi#/dl.msi_",
+            "hash": "73e6a15f5b2b9e6a87ffad7fdaacd6e992a597b08c911ee7e3baddd15e29bcc7"
         }
     },
     "pre_install": [
@@ -70,7 +70,8 @@
     ],
     "checkver": {
         "url": "https://mirrors.bfsu.edu.cn/libreoffice/libreoffice/stable/",
-        "regex": "([\\d.]+)/"
+        "regex": "(\\d+\\.\\d+\\.\\d+)/",
+        "reverse": true
     },
     "autoupdate": {
         "architecture": {
@@ -83,9 +84,6 @@
             "arm64": {
                 "url": "https://mirrors.bfsu.edu.cn/libreoffice/libreoffice/stable/$version/win/aarch64/LibreOffice_$version_Win_aarch64.msi#/dl.msi_"
             }
-        },
-        "hash": {
-            "url": "$url.sha256"
         }
     }
 }

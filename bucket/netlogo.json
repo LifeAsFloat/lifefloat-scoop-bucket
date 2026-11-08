@@ -2,52 +2,61 @@
     "homepage": "https://ccl.northwestern.edu/netlogo/",
     "description": "turtles, patches, and links for kids, teachers, and scientists",
     "license": "GPL-2.0",
-    "version": "6.3.0",
+    "version": "7.0.4",
     "architecture": {
         "64bit": {
-            "url": "https://ccl.northwestern.edu/netlogo/6.3.0/NetLogo-6.3.0-64.msi",
-            "hash": "68ebf4ce1969946266feec47b3ad246e2bfbf4565ca06835da30853760f9227d"
+            "url": "https://github.com/NetLogo/NetLogo/releases/download/v7.0.4/NetLogo-7.0.4-64.msi",
+            "hash": "dbcb80a66946e4c27d9f0fe69f83eeafc62f2b6a89ca64bfb6d684ac3959c0e3"
         },
         "32bit": {
-            "url": "https://ccl.northwestern.edu/netlogo/6.3.0/NetLogo-6.3.0-32.msi",
-            "hash": "7fe92763bde12a6e412dd85d7cbf34ba31b35ae9337dc90265450099a6cbc6fb"
+            "url": "https://github.com/NetLogo/NetLogo/releases/download/v7.0.4/NetLogo-7.0.4-32.msi",
+            "hash": "eccd2ff33481d22984945ed33bcdb805cd927911803e8beb24c835415361dc84"
         }
     },
     "bin": [
-        "PFiles\\NetLogo 6.2.0\\NetLogo.exe",
-        "PFiles\\NetLogo 6.2.0\\NetLogo 3D.exe",
-        "PFiles\\NetLogo 6.2.0\\HubNet Client.exe",
-        "PFiles\\NetLogo 6.2.0\\Behaviorsearch.exe"
+        "PFiles\\NetLogo 7.0.4\\NetLogo.exe",
+        "PFiles\\NetLogo 7.0.4\\NetLogo 3D.exe",
+        "PFiles\\NetLogo 7.0.4\\HubNet Client.exe",
+        "PFiles\\NetLogo 7.0.4\\Behaviorsearch.exe"
     ],
     "shortcuts": [
         [
-            "PFiles\\NetLogo 6.2.0\\NetLogo.exe",
+            "PFiles\\NetLogo 7.0.4\\NetLogo.exe",
             "NetLogo"
         ],
         [
-            "PFiles\\NetLogo 6.2.0\\NetLogo 3D.exe",
+            "PFiles\\NetLogo 7.0.4\\NetLogo 3D.exe",
             "NetLogo 3D"
         ],
         [
-            "PFiles\\NetLogo 6.2.0\\HubNet Client.exe",
+            "PFiles\\NetLogo 7.0.4\\HubNet Client.exe",
             "HubNet Client"
         ],
         [
-            "PFiles\\NetLogo 6.2.0\\Behaviorsearch.exe",
+            "PFiles\\NetLogo 7.0.4\\Behaviorsearch.exe",
             "Behaviorsearch"
         ]
     ],
     "checkver": {
-        "url": "https://ccl.northwestern.edu/netlogo/oldversions.shtml",
-        "regex": "NetLogo ([\\d.]+)"
+        "url": "https://api.github.com/repos/NetLogo/NetLogo/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "v([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://ccl.northwestern.edu/netlogo/$version/NetLogo-$version-64.msi"
+                "url": "https://github.com/NetLogo/NetLogo/releases/download/v$version/NetLogo-$version-64.msi",
+                "hash": {
+                    "url": "https://api.github.com/repos/NetLogo/NetLogo/releases/tags/v$version",
+                    "regex": "(?s)$basename.*?\"digest\":\"sha256:$sha256\""
+                }
             },
             "32bit": {
-                "url": "https://ccl.northwestern.edu/netlogo/$version/NetLogo-$version-32.msi"
+                "url": "https://github.com/NetLogo/NetLogo/releases/download/v$version/NetLogo-$version-32.msi",
+                "hash": {
+                    "url": "https://api.github.com/repos/NetLogo/NetLogo/releases/tags/v$version",
+                    "regex": "(?s)$basename.*?\"digest\":\"sha256:$sha256\""
+                }
             }
         }
     }

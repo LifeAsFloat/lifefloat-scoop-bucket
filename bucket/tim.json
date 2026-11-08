@@ -1,5 +1,5 @@
 {
-    "version": "3.4.7.22084",
+    "version": "3.5.1.22172",
     "description": "An lightweight instant messaging software service developed by Tencent",
     "homepage": "https://tim.qq.com/",
     "license": {
@@ -11,8 +11,8 @@
         "'%UserProfile%\\Documents\\Tencent Files'.",
         "Files produced at runtime leaves in '%AppData%\\Tencent'."
     ],
-    "url": "https://webcdn.m.qq.com/spcmgr/download/TIM3.4.7.22084.exe#/dl.exe",
-    "hash": "5a2ae169a16d309ff79e0584abc87cc2d396c8e205ab1f977d398b8e5f38d3de",
+    "url": "https://webcdn.m.qq.com/spcmgr/download/TIM3.5.1.22172.exe#/dl.exe",
+    "hash": "ec92e21b4b7bdb78979409d21df9aafe4cebf976b27961cc456b6dfd31908567",
     "shortcuts": [
         [
             "Bin\\QQScLauncher.exe",
@@ -33,10 +33,13 @@
         ]
     },
     "checkver": {
-        "url": "https://pc.qq.com/detail/18/detail_23258.html",
-        "regex": "TIM([\\d.]+).exe"
+        "url": "https://jsonschema.qpic.cn/99c2de7e3c0daa2e1eb6fa548bbf0c88/d80bde56620e0c005f06232ef2582bfc/versions",
+        "regex": "\"windows\":\"[^\"]*TIM([\\d.]+)\\.exe\""
     },
     "autoupdate": {
-        "url": "https://webcdn.m.qq.com/spcmgr/download/TIM$version.exe#/dl.exe"
+        "url": "https://webcdn.m.qq.com/spcmgr/download/TIM$version.exe#/dl.exe",
+        "hash": {
+            "mode": "download"
+        }
     }
 }

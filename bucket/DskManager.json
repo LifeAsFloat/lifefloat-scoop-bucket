@@ -1,10 +1,10 @@
 {
-    "version": "1.0",
+    "version": "1.2.13.9471",
     "description": "A desktop Manager that helps you organize your desktop icons into customizable grids.",
     "homepage": "https://dskmanager.com/",
     "license": "freeware",
     "url": "https://download.dskmanager.com/dskmanager_officialsite_x64.exe#/dl.7z",
-    "hash": "sha256:028D5CB8B8A0ABBD855E2A95067504102EAD129AFACD00D4493C9AECC160C598",
+    "hash": "sha256:32050303a5476192817950cfce0c3835244023b120fbd9425ddca658a2c3665d",
     "post_install": [
         "if (!(Test-Path \"$persist_dir\\Db\")) { New-Item -ItemType Directory -Path \"$persist_dir\\Db\" | Out-Null }",
         "if (!(Test-Path \"$persist_dir\\config.ini\")) { Set-Content -Path \"$persist_dir\\config.ini\" '' -Encoding Ascii | Out-Null }",
@@ -18,8 +18,8 @@
     "bin": "fsmainx64.exe",
     "shortcuts": [["fsmainx64.exe", "Dskmanager"]],
     "checkver": {
-        "url": "https://www.dskmanager.com/",
-        "regex": "版本[:：]\\s([\\d.+]+)"
+        "url": "https://api-update.dskmanager.com/verinfo/windows?lang=chs&ver=1.0&arch=x64",
+        "regex": "\"ver\":\"([\\d.]+)\""
     },
     "autoupdate": {
         "url": "https://download.dskmanager.com/dskmanager_officialsite_x64.exe#/dl.7z",

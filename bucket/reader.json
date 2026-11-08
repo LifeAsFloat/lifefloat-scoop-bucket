@@ -1,12 +1,12 @@
 {
-    "version": "2.0.0.0",
+    "version": "3.1.2.0",
     "description": "A win32 txt/epub/online file reader",
     "homepage": "https://github.com/binbyu/Reader",
     "license": "unkown",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/binbyu/Reader/releases/download/v2.0/Reader_v2.0.0.0_x64.7z",
-            "hash": "6d0b646a01c2230678418a24b17dde4c9bf4d5cc9cea5c3d7e5b076a848c2b35",
+            "url": "https://github.com/binbyu/Reader/releases/download/v3.1.2/Reader_v3.1.2.0_x64.7z",
+            "hash": "5b876e6e70cd6655293646e12167496dd014369e87ba1d9274602bcaa128c381",
             "bin": [
                 [
                     "Reader.exe",
@@ -21,8 +21,8 @@
             ]
         },
         "32bit": {
-            "url": "https://github.com/binbyu/Reader/releases/download/v2.0/Reader_v2.0.0.0.7z",
-            "hash": "95b148f35469c63536c0d7de3e8f4e59bf553b7915913b168de00d918fe9c7b7",
+            "url": "https://github.com/binbyu/Reader/releases/download/v3.1.2/Reader_v3.1.2.0_x86.7z",
+            "hash": "dcaf6cc574b1a3c9108ad8093423ad1599ebda8b62bfa3fd35d76cc96052d4f2",
             "bin": [
                 [
                     "Reader.exe",
@@ -38,16 +38,16 @@
         }
     },
     "checkver": {
-        "url": "https://github.com/binbyu/Reader",
-        "regex": "v([\\d.]+)"
+        "url": "https://api.github.com/repos/binbyu/Reader/releases/latest",
+        "regex": "releases/download/v(?<tag>[\\d.]+)/Reader_v(?<version>[\\d.]+)_x64\\.7z"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/binbyu/Reader/releases/download/v$majorVersion.$minorVersion/Reader_v$version_x64.7z"
+                "url": "https://github.com/binbyu/Reader/releases/download/v$matchTag/Reader_v$version_x64.7z"
             },
             "32bit": {
-                "url": "https://github.com/binbyu/Reader/releases/download/v$majorVersion.$minorVersion/Reader_v$version.7z"
+                "url": "https://github.com/binbyu/Reader/releases/download/v$matchTag/Reader_v$version_x86.7z"
             }
         }
     }

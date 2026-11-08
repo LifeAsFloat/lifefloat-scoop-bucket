@@ -1,5 +1,5 @@
 {
-    "version": "23.3.1-0",
+    "version": "26.9.4-0",
     "description": "A cross-platform, Python-agnostic binary package manager.",
     "homepage": "https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/",
     "license": "BSD-3-Clause",
@@ -11,8 +11,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py310_23.3.1-0-Windows-x86_64.exe#/setup.exe",
-            "hash": "307194e1f12bbeb52b083634e89cc67db4f7980bd542254b43d3309eaf7cb358"
+            "url": "https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py314_26.9.4-0-Windows-x86_64.exe#/setup.exe",
+            "hash": "4e5646825a87ac9ea86969fdaf7181e89b66b42e3f9107e4e6a61f65d76ae518"
         }
     },
     "installer": {
@@ -44,18 +44,17 @@
     ],
     "persist": "envs",
     "checkver": {
-        "url": "https://docs.conda.io/en/latest/miniconda.html",
-        "regex": "Miniconda3-py310_([\\d.-]+)-Windows"
+        "url": "https://repo.anaconda.com/miniconda/",
+        "regex": "Miniconda3-py314_([\\d.]+-\\d+)-Windows-x86_64\\.exe"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py310_$version-Windows-x86_64.exe#/setup.exe"
+                "url": "https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py314_$version-Windows-x86_64.exe#/setup.exe"
             }
         },
         "hash": {
-            "url": "https://docs.conda.io/en/latest/miniconda.html",
-            "regex": "(?sm)$basename.*?>$sha256<"
+            "mode": "download"
         }
     }
 }
