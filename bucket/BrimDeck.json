@@ -1,0 +1,31 @@
+{
+    "version": "1.2.4",
+    "description": "A Dynamic Island for Windows 11 with AI coding tool quotas, usage tracking, music controls, and more.",
+    "homepage": "https://github.com/MoFeng2223/BrimDeck",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/MoFeng2223/BrimDeck/releases/download/v1.2.4/BrimDeck-1.2.4-Portable-x64.zip",
+            "hash": "840765ae90fd80b6e1c063100654e7ef897bf5a8fd6b7869f4a8e043c812dc41"
+        }
+    },
+    "extract_dir": "BrimDeck",
+    "bin": "BrimDeck.exe",
+    "shortcuts": [
+        [
+            "BrimDeck.exe",
+            "BrimDeck"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/MoFeng2223/BrimDeck/releases/latest",
+        "regex": "\"tag_name\":\"v?([\\d.]+)\""
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/MoFeng2223/BrimDeck/releases/download/v$version/BrimDeck-$version-Portable-x64.zip"
+            }
+        }
+    }
+}
