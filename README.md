@@ -25,7 +25,7 @@ sudo scoop install -g lifefloat-scoop-bucket/dotnet-scoop
 
 ## 应用清单
 
-共收录 98 个应用：
+共收录 100 个应用：
 
 | 应用 | 说明 |
 | --- | --- |
@@ -37,6 +37,7 @@ sudo scoop install -g lifefloat-scoop-bucket/dotnet-scoop
 | baidunetdisk | 百度网盘 PC 版 |
 | blender-cn | 3D creation suite |
 | bongocat | A cute animated cat that sits on your desktop and reacts to your keyboard. |
+| BrimDeck | Windows 11 灵动岛风格工具，集成 AI 编码额度、使用统计与音乐控制 |
 | cajviewer | CAJViewer |
 | CCompare | A code synchronization and comparison tool that can be used for free. |
 | clash-for-windows | A Windows GUI based on Clash |
@@ -53,6 +54,7 @@ sudo scoop install -g lifefloat-scoop-bucket/dotnet-scoop
 | EasySpider | 基于 Python3 的强大、简单易用的网页爬虫框架 |
 | edgeless | 强大而优雅的 PE 工具 |
 | edrawmax | 集两百多种绘图于一身的综合图形图表设计软件 |
+| ELYTerminal | 基于 Rust、GPUI 开发的跨平台终端，支持 Windows 10+、macOS 与 Linux |
 | eudic | 权威的英语词典软件，英语学习者必备 |
 | feishu | Connect with teammates anytime and anywhere |
 | file-converter | Various file converter and compressor |

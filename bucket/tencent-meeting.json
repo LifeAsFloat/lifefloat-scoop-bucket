@@ -1,5 +1,5 @@
 {
-    "version": "3.5.6.416",
+    "version": "3.48.0.443",
     "description": "Tencent Meeting provides one-stop audio and video conferencing solutions.",
     "homepage": "https://meeting.tencent.com/",
     "license": {
@@ -7,13 +7,13 @@
         "url": "https://meeting.tencent.com/declare.html"
     },
     "notes": "We don't persist your Tencent Meeting data, they are still storaged in \"$env:APPDATA\\Tencent\\WeMeet\".",
-    "url": "https://updatecdn.meeting.qq.com/cos/8d470eda782890abc7cc8cc3c2629cb3/TencentMeeting_0300000000_3.5.6.416.publish.exe#/dl.7z",
-    "hash": "dacd74f99d97c1776b28a971b63818c0afe51146824c242bb826987526222d4e",
+    "url": "https://updatecdn.meeting.qq.com/cos/03001aa87c1fdfe02774f25175603db9/TencentMeeting_0300000000_3.48.0.443_x86_64.publish.officialwebsite.exe#/dl.7z",
+    "hash": "d365c3102dd4330e92cf8675f8694985d64d3b108b698b7efe92d18c128fbeb4",
     "post_install": [
-        "Rename-Item \"$dir\\`$_9_\" \"$dir\\$version\"",
-        "Remove-Item \"$dir\\$*\" -Recurse -Force -ErrorAction SilentlyContinue",
+        "Get-ChildItem \"$dir\\`$_*\" | Rename-Item -NewName \"$version\" -Force",
+        "Remove-Item \"$dir\\`$*\" -Recurse -Force -ErrorAction SilentlyContinue",
         "Remove-Item \"$dir\\wemeetapp_new.exe\" -Force -ErrorAction SilentlyContinue",
-        "create_startmenu_shortcuts $manifest $dir\\..\\$version $global $arch"
+        "create_startmenu_shortcuts $manifest $original_dir $global $architecture"
     ],
     "bin": [
         [
@@ -28,7 +28,13 @@
         ]
     ],
     "checkver": {
-        "url": "https://pc.qq.com/detail/18/detail_26218.html",
-        "regex": "最新([\\d.]+)官方正式版"
+        "url": "https://meeting.tencent.com/web-service/query-download-info?nonce=0000000000000000&q=%5B%7B%22package-type%22%3A%22app%22%2C%22channel%22%3A%220300000000%22%2C%22platform%22%3A%22windows%22%2C%22arch%22%3A%22x86_64%22%7D%5D",
+        "regex": "\"md5\":\"(?<hash>[a-f0-9]{32})\",\"size\":\\d+,\"url\":\"[^\"]*\",\"version\":\"(?<version>[\\d.]+)\""
+    },
+    "autoupdate": {
+        "url": "https://updatecdn.meeting.qq.com/cos/$matchHash/TencentMeeting_0300000000_$version_x86_64.publish.officialwebsite.exe#/dl.7z",
+        "hash": {
+            "mode": "download"
+        }
     }
 }

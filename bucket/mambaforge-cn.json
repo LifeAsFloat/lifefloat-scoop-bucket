@@ -1,16 +1,17 @@
 {
-    "version": "23.1.0-1",
+    "version": "24.11.0-1",
     "description": "A conda-forge distribution",
-    "homepage": "https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/",
+    "homepage": "https://github.com/conda-forge/miniforge",
     "license": "BSD-3-Clause",
     "notes": [
         "From 4.6.0, conda has built the support for Cmd, Powershell or other shells.",
-        "Use \"conda init powershell\" or \"conda init __your_favorite_shell__\""
+        "Use \"conda init powershell\" or \"conda init __your_favorite_shell__\"",
+        "Mambaforge is discontinued upstream; 24.11.0-1 is the last release that ships a Mambaforge installer."
     ],
     "architecture": {
         "64bit": {
-            "url": "https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Mambaforge-23.1.0-1-Windows-x86_64.exe",
-            "hash": "f28b5f9c896198c11eb085966cc80a4210868c452f1945a338017dfb786144bf"
+            "url": "https://github.com/conda-forge/miniforge/releases/download/24.11.0-1/Mambaforge-24.11.0-1-Windows-x86_64.exe",
+            "hash": "8ee08a4074aa1a2e48a0f73245e77571974bd8e33951d56cc67ce6960668294e"
         }
     },
     "pre_install": "if ($dir -match ' ') { error 'The installation directory cannot include a space'; break}",
@@ -42,15 +43,15 @@
     ],
     "persist": "envs",
     "checkver": {
-        "github": "https://github.com/conda-forge/miniforge",
-        "regex": "tag/([\\d.-]+)"
+        "url": "https://api.github.com/repos/conda-forge/miniforge/releases?per_page=100",
+        "regex": "browser_download_url\":\"https://github\\.com/conda-forge/miniforge/releases/download/(?<version>[\\d.]+-[\\d.]+)/Mambaforge-\\k<version>-Windows-x86_64\\.exe"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Mambaforge-$version-Windows-x86_64.exe",
+                "url": "https://github.com/conda-forge/miniforge/releases/download/$version/Mambaforge-$version-Windows-x86_64.exe",
                 "hash": {
-                    "url": "$url.sha256"
+                    "mode": "download"
                 }
             }
         }

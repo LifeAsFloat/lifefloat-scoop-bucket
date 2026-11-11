@@ -1,6 +1,6 @@
 {
-    "version": "10.0.403",
-    "description": "Microsoft .NET Framework 10.0.100 Developer Pack",
+    "version": "11.0.100",
+    "description": "Microsoft .NET Framework 11.0.100 Developer Pack",
     "homepage": "https://dotnet.microsoft.com/zh-cn/",
     "license": "MIT",
     "notes": [
@@ -11,8 +11,8 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.403/dotnet-sdk-10.0.403-win-x64.zip",
-            "hash": "sha512:7a114c318fa7f1d9822991b534b2814d0e78386ceda816b371f5141acefe741d87ccb606ede06cadac8f9ac5070e32b708a67bbd1619ff5e5a7858a27874ef48"
+            "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/11.0.100/dotnet-sdk-11.0.100-win-x64.zip",
+            "hash": "sha512:5cdd9122c84873f090038548ebe8a4786e5c50a6b1b9792ca2c6dab82fd74a0d7f1d6cdf59e7dcd25e4903dd44f37af5d7ed73ecd3bca4d0cce948b5572452c3"
         }
     },
     "env_add_path": ".",
